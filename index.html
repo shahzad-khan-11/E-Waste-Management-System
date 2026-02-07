@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoBin - E-Waste Drop-off Finder</title>
+  <meta name="description" content="Find verified e-waste collection centers in Patna. Safely dispose electronics and build a greener future.">
+  <meta name="author" content="EcoBin Team">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Maps API (Replace with your API key) -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUtXBs5j--RVeKFZS8IZcK89TZtt1l7NI&callback=initMap" async defer></script>
+
+
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="EcoBin - E-Waste Drop-off Finder">
+  <meta property="og:description" content="Find verified e-waste collection centers in Patna. Safely dispose electronics and build a greener future.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ecobin_app">
+  <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-content">
+        <!-- Logo -->
+        <div class="nav-logo">
+          <div class="logo-icon">
+            <span>E</span>
+          </div>
+          <h2>EcoBin</h2>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links desktop-nav">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#how-it-works" class="nav-link">How It Works</a>
+          <a href="#map-section" class="nav-link">Map</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav" id="mobileNav">
+        <a href="#home" class="mobile-nav-link">Home</a>
+        <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+        <a href="#map-section" class="mobile-nav-link">Map</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <!-- Badge -->
+      <div class="hero-badge">
+        <i data-lucide="map-pin"></i>
+        <span>Serving Patna & Beyond</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-title">
+        E-Waste Drop-off
+        <span class="hero-title-accent">Finder</span>
+      </h1>
+
+      <!-- Subheading -->
+      <p class="hero-subtitle">
+        Millions of electronic devices are thrown away unsafely every year.
+        <span class="hero-subtitle-accent">Find verified e-waste collection centers and build a greener future.</span>
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="scrollToSection('map-section')">
+          <i data-lucide="map-pin"></i>
+          Find Centers Now
+        </button>
+        <button class="btn btn-outline" onclick="scrollToSection('how-it-works')">
+          How It Works
+        </button>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats">
+        <div class="stat-card" data-target="16">
+          <i data-lucide="map-pin"></i>
+          <div class="stat-number">0</div>
+          <p>Verified Centers</p>
+        </div>
+        <div class="stat-card" data-target="1500">
+          <i data-lucide="recycle"></i>
+          <div class="stat-number">0</div>
+          <p>Devices Recycled</p>
+        </div>
+        <div class="stat-card" data-target="800">
+          <i data-lucide="users"></i>
+          <div class="stat-number">0</div>
+          <p>Citizens Helped</p>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <button class="scroll-indicator" onclick="scrollToSection('how-it-works')">
+        <span>Explore More</span>
+        <div class="scroll-arrow">
+          <i data-lucide="arrow-down"></i>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Simple steps to responsibly dispose of your electronic waste and make a positive environmental impact</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-icon">
+            <i data-lucide="search"></i>
+          </div>
+          <h3>Search Area</h3>
+          <p>Type your area or center name to locate the nearest verified e-waste collection centers in your vicinity.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-icon">
+            <i data-lucide="navigation"></i>
+          </div>
+          <h3>Visit Center</h3>
+          <p>Navigate to the nearest verified center safely and conveniently using our integrated map system.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-icon">
+            <i data-lucide="recycle"></i>
+          </div>
+          <h3>Dispose Safely</h3>
+          <p>Drop off your e-waste responsibly at certified centers and contribute to a cleaner, greener city.</p>
+        </div>
+      </div>
+
+      <div class="cta-card">
+        <h3>Ready to Make a Difference?</h3>
+        <p>Join thousands of environmentally conscious citizens in Patna who are making responsible e-waste disposal choices.</p>
+        <button class="btn btn-nature" onclick="scrollToSection('map-section')">Start Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section id="map-section" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Locate E-Waste Centers</h2>
+        <p>Find verified e-waste collection centers near you in Patna</p>
+      </div>
+
+      <!-- Controls -->
+      <div class="map-controls">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by area or center name...">
+        <button class="btn btn-secondary" id="locateBtn">
+          <i data-lucide="navigation"></i>
+          Use My Location
+        </button>
+      </div>
+
+      <!-- Map and Centers -->
+      <div class="map-grid">
+        <!-- Map Container -->
+        <div class="map-container">
+          <div id="map" class="map-placeholder">
+            <div class="map-placeholder-content">
+              <i data-lucide="map-pin"></i>
+              <h3>Interactive Map</h3>
+              <p>Interactive Google Map integration would be implemented here</p>
+              <div class="map-info">Showing <span id="centerCount">16</span> centers in Patna</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Centers List -->
+        <div class="centers-list">
+          <h3>Available Centers</h3>
+          <div id="centersList" class="centers-container">
+            <!-- Centers will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+      <i data-lucide="arrow-up"></i>
+    </button>
+  </section>
+
+  <!-- ✅ Live Location Section -->
+<section id="live-location" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>📍 Your Live Location</h2>
+      <p>Track your current location to find the nearest e-waste center.</p>
+    </div>
+    <div class="map-container">
+      <div id="liveMap" class="map-placeholder">
+        <p>Loading your live location...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Schedule Pickup Section -->
+<section id="schedule-pickup" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>📅 Schedule a Pickup</h2>
+      <p>Can’t visit a center? Schedule a pickup and we’ll collect your e-waste.</p>
+    </div>
+    <form id="pickupForm" class="pickup-form glass-card">
+      <div class="form-group">
+        <label for="pickupName">Full Name</label>
+        <input type="text" id="pickupName" name="pickupName" required placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="pickupAddress">Address</label>
+        <input type="text" id="pickupAddress" name="pickupAddress" required placeholder="Enter your address">
+      </div>
+      <div class="form-group">
+        <label for="pickupDate">Pickup Date</label>
+        <input type="date" id="pickupDate" name="pickupDate" required>
+      </div>
+      <div class="form-group">
+        <label for="pickupPhone">Phone Number</label>
+        <input type="tel" id="pickupPhone" name="pickupPhone" required placeholder="+91 XXXXX XXXXX">
+      </div>
+      <button type="submit" class="btn btn-nature btn-full">
+        <i data-lucide="calendar"></i> Schedule Pickup
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- Rewards / Green Points -->
+<div class="rewards-card glass-card">
+  <h3>Your Green Points</h3>
+  <p>You earn <strong>10 points</strong> for every pickup request.</p>
+  <div class="green-points">
+    <span id="pointsValue">0</span> 🌱
+  </div>
+  <button class="btn btn-nature" onclick="redeemPoints()">Redeem Points</button>
+</div>
+
+
+
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>About EcoBin</h2>
+        <p>EcoBin was developed for the <span class="highlight">GLITCH 1.0 Hackathon</span> under the <span class="highlight">Environment & Sustainability</span> category.</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Main Content -->
+        <div class="about-content">
+          <div class="glass-card">
+            <h3>Transforming E-Waste Management in Patna</h3>
+            <p>Every year, millions of electronic devices are discarded unsafely, contributing to environmental pollution and health hazards. EcoBin addresses this critical issue by connecting citizens with verified e-waste collection centers through an intuitive, map-based platform.</p>
+            <p>Our solution leverages Google Maps API to provide real-time location data, making it easier than ever for residents of Patna to find nearby collection points and dispose of their electronic waste responsibly.</p>
+            <div class="feature-badges">
+              <span class="badge">Real-time Data</span>
+              <span class="badge">Verified Centers</span>
+              <span class="badge">User Friendly</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="about-stats">
+          <div class="stat-mini">
+            <div class="stat-mini-number">16</div>
+            <div class="stat-mini-label">Verified Centers</div>
+          </div>
+          <div class="stat-mini">
+            <div class="stat-mini-number">100%</div>
+            <div class="stat-mini-label">Safe Disposal</div>
+          </div>
+          <div class="stat-mini">
+            <div class="stat-mini-number">24/7</div>
+            <div class="stat-mini-label">Service Available</div>
+          </div>
+          <div class="stat-mini">
+            <div class="stat-mini-number">0</div>
+            <div class="stat-mini-label">Cost to Users</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="target"></i>
+          </div>
+          <h4>Our Mission</h4>
+          <p>To make e-waste disposal accessible, safe, and environmentally responsible for every citizen in Patna.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="leaf"></i>
+          </div>
+          <h4>Environmental Impact</h4>
+          <p>Preventing harmful electronic waste from ending up in landfills and water sources.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="users"></i>
+          </div>
+          <h4>Community Driven</h4>
+          <p>Built for the community, by the community to address local e-waste management challenges.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="award"></i>
+          </div>
+          <h4>Verified Centers</h4>
+          <p>All listed collection centers are verified and follow proper e-waste disposal protocols.</p>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="tech-stack">
+        <h3>Built With Modern Technology</h3>
+        <div class="tech-badges">
+          <span class="tech-badge">HTML5</span>
+          <span class="tech-badge">CSS3</span>
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">Google Maps API</span>
+          <span class="tech-badge">Responsive Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>Have questions, suggestions, or want to contribute to the project? We'd love to hear from you!</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="glass-card">
+            <h3>Let's Connect</h3>
+
+            <!-- Developer Info -->
+            <div class="developer-info">
+              <div class="developer-avatar">
+                <span>SK</span>
+              </div>
+              <div class="developer-details">
+                <h4>Shahzad Khan</h4>
+                <p>BCA Student, Amity University Patna</p>
+              </div>
+            </div>
+
+            <!-- Contact Methods -->
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <i data-lucide="mail"></i>
+                </div>
+                <div class="contact-details">
+                  <div class="contact-label">Email</div>
+                  <div class="contact-value">shahzad.khan@example.com</div>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <i data-lucide="phone"></i>
+                </div>
+                <div class="contact-details">
+                  <div class="contact-label">Phone</div>
+                  <div class="contact-value">+91 12345 67890</div>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div class="contact-details">
+                  <div class="contact-label">Location</div>
+                  <div class="contact-value">Patna, Bihar, India</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+              <h4>Connect on Social Media</h4>
+              <div class="social-buttons">
+                <button class="social-btn">
+                  <i data-lucide="github"></i>
+                </button>
+                <button class="social-btn">
+                  <i data-lucide="linkedin"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Project Info -->
+            <div class="project-info">
+              <h4>About This Project</h4>
+              <p>EcoBin was developed as part of GLITCH 1.0 Hackathon, focusing on environmental sustainability and responsible e-waste management in Patna.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <div class="glass-card">
+            <h3>Send a Message</h3>
+            
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Share your feedback, suggestions, or questions..." rows="6" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-nature btn-full">
+                <i data-lucide="send"></i>
+                Send Message
+              </button>
+            </form>
+
+            <div class="form-info">
+              <p><strong>Response Time:</strong> We typically respond within 24-48 hours during weekdays.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- ✅ Emergency Floating Button + Modal -->
+<button id="emergencyBtn" class="emergency-btn">
+  <i data-lucide="alert-triangle"></i>
+</button>
+
+<div id="emergencyModal" class="emergency-modal">
+  <div class="emergency-modal-content glass-card">
+    <span id="closeEmergency" class="close-btn">&times;</span>
+    <h2>🚨 Emergency Assistance</h2>
+    <p>If you see hazardous e-waste dumping, report it immediately:</p>
+    <button class="btn btn-danger btn-full" onclick="window.location.href='tel:+911234567890'">
+      <i data-lucide="phone-call"></i> Call Helpline
+    </button>
+    <button class="btn btn-outline btn-full" onclick="alert('Report submitted!')">
+      <i data-lucide="flag"></i> Report Incident
+    </button>
+  </div>
+</div>
+
+    <div class="footer-bg"></div>
+    <div class="container">
+      <div class="footer-content">
+        <!-- Brand Section -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">
+              <span>E</span>
+            </div>
+            <div class="footer-logo-text">
+              <h3>EcoBin</h3>
+              <p>E-Waste Drop-off Finder</p>
+            </div>
+          </div>
+          <p class="footer-description">
+            Making e-waste disposal accessible, safe, and environmentally responsible for every citizen in Patna. 
+            Together, we can build a cleaner and greener future.
+          </p>
+          <div class="footer-features">
+            <div class="footer-feature">
+              <div class="footer-feature-dot"></div>
+              <span>16 Verified Centers</span>
+            </div>
+            <div class="footer-feature">
+              <div class="footer-feature-dot"></div>
+              <span>100% Safe Disposal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <div class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#map-section">Find Centers</a>
+            <a href="#about">About Project</a>
+            <a href="#contact">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-resources">
+          <h4>Resources</h4>
+          <div class="footer-nav">
+            <a href="#">E-Waste Guidelines <i data-lucide="external-link"></i></a>
+            <a href="#">Safety Instructions <i data-lucide="external-link"></i></a>
+            <a href="#">Environmental Impact <i data-lucide="external-link"></i></a>
+            <a href="#">GLITCH 1.0 Hackathon <i data-lucide="external-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <span>© 2025 EcoBin Project | Built with</span>
+          <i data-lucide="heart" class="footer-heart"></i>
+          <span>by Shahzad Khan</span>
+        </div>
+
+        <div class="footer-tech">
+          <span>HTML</span>
+          <span>•</span>
+          <span>CSS</span>
+          <span>•</span>
+          <span>JavaScript</span>
+          <span>•</span>
+          <span>Maps API</span>
+        </div>
+      </div>
+
+      <div class="footer-info">
+        <p>Developed for GLITCH 1.0 Hackathon - Environment & Sustainability Category</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
